@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+body { background: #F6F1FF; color: #2E2350; }
+
+.sticker {
+  border: 3px solid #2E2350;
+  box-shadow: 4px 4px 0 #2E2350;
+  background: #fff;
+}
+.sticker-pink { background: #FF8FC2; }
+.sticker-blue { background: #7FD3FF; }
+.sticker-mint { background: #A8EFC7; }
+.sticker-yellow { background: #FFDA6E; }
+.sticker-lilac { background: #CBB8FF; }
+
+.outline-text {
+  -webkit-text-stroke: 2px #2E2350;
+  color: #F6F1FF;
+}
+
+.float-slow { animation: floaty 6s ease-in-out infinite; }
+.float-slow2 { animation: floaty 7s ease-in-out infinite 1s; }
+.float-slow3 { animation: floaty 5.5s ease-in-out infinite .5s; }
+@keyframes floaty {
+  0%, 100% { transform: translateY(0) rotate(var(--r, -6deg)); }
+  50% { transform: translateY(-12px) rotate(var(--r, -6deg)); }
+}
+
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.show { opacity: 1; transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  .float-slow, .float-slow2, .float-slow3 { animation: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+::selection { background: #FFDA6E; color: #2E2350; }
+.dashed-border { border: 2px dashed #2E2350; }
